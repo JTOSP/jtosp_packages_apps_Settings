@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Ice Cold Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/various_shit_title"
+        android:key="various_shit_screen">
+
+    <PreferenceCategory
+        android:key="lockscreen_category"
+        android:title="@string/lockscreen_category" >
+    </PreferenceCategory>
+
+    <!-- Disable camera swipe -->
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="camera_widget_hide"
+        android:title="@string/camera_widget_hide"
+        android:summary="@string/camera_widget_hide_summary" />
+
+    <!-- Disable dialer swipe -->
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="dialer_widget_hide"
+        android:title="@string/dialer_widget_hide"
+        android:summary="@string/dialer_widget_hide_summary" />
+
+    <!-- Proximity on wake -->
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="proximity_on_wake"
+        android:title="@string/proximity_on_wake_title"
+        android:summary="@string/proximity_on_wake_summary" />
+
+    <!-- Ad blocker -->
+    <PreferenceScreen
+        android:key="hfm_settings"
+        android:title="@string/hfm_pref_screen_title"
+        android:fragment="com.android.settings.jtosp.hfm.HfmSettings" />
+
+    <!-- Weather -->
+    <PreferenceCategory
+        android:key="status_bar_show_weather_category"
+        android:title="@string/status_bar_show_weather_category" >
+
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="status_bar_show_weather"
+            android:title="@string/status_bar_show_weather_title"
+            android:summary="@string/status_bar_show_weather_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="lockscreen_weather"
+            android:title="@string/lockscreen_weather_title"
+            android:summary="@string/lockscreen_weather_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <!-- LockClock settings -->
+    <PreferenceScreen
+        android:key="lock_clock"
+        android:title="@string/lock_clock_title"
+        android:summary="@string/lock_clock_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.cyanogenmod.lockclock"
+            android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+        </PreferenceScreen>
+
+    <!-- Network traffic indicator -->
+    <PreferenceScreen
+        android:key="traffic"
+        android:fragment="com.android.settings.jtosp.Traffic"
+        android:title="@string/network_traffic_title" />
+
+    <!-- Navbar height -->
+    <PreferenceCategory
+        android:key="navigation_bar_category"
+        android:title="@string/navigation_bar_category" >
+
+        <ListPreference
+            android:key="navigation_bar_height"
+            android:dialogTitle="@string/navigation_bar_height"
+            android:title="@string/navigation_bar_height"
+            android:entries="@array/navigation_bar_height_entries"
+            android:entryValues="@array/navigation_bar_height_values"
+            android:defaultValue="48"
+            android:persistent="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="jtosp_apps_category"
+        android:title="@string/jtosp_apps_category" >
+    </PreferenceCategory>
+
+    <!-- Joke -->
+    <Preference
+        android:key="hidden_shit"
+        android:title="\n \n" />
+
+    <CheckBoxPreference
+        android:key="hidden_shit_unlocked"
+        android:title="@string/hidden_shit_title"
+        android:summary="@string/hidden_shit_summary" />
+
+    <PreferenceScreen android:key="hidden_img"
+        android:enabled="true"
+        android:layout="@layout/jtosp_hidden_img" />
+
+</PreferenceScreen>
